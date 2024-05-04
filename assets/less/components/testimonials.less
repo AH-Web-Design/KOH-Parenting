@@ -1,0 +1,95 @@
+//out: false
+/*------------IMPORTS------------*/
+@import './slider.less';
+
+/*------------VARIABLES------------*/
+@testimonial-slide-height:auto;
+@slide-bg-1:linear-gradient(42deg, rgba(248,155,41,1) 0%, rgba(255,15,123,1) 100%);
+@slide-bg-2:linear-gradient(42deg, rgba(89,92,255,1) 0%, rgba(81,192,207,1) 100%);
+@slide-bg-3:linear-gradient(42deg, #ff4040 0%, #e81cff 100%);
+@slide-bg-4:linear-gradient(42deg, #ff1b6b 0%, #45caff 100%);
+@pagination-bottom: -30px;
+@testimonial-author-mt: 1rem;
+/*------------SETUP------------*/
+.slider.testimonials {
+    aspect-ratio:  unset;
+    box-shadow: none;
+    height: calc(@testimonial-slide-height + calc(@testimonial-slide-height / 5));
+    &, .swiper {
+        border-radius: unset;
+    }
+
+
+    .swiper-slide {
+        height: @testimonial-slide-height;
+        border-radius: @border-radius;
+        padding: @gap-3;
+        &.slide-bg-1 {
+            background: @slide-bg-1;
+        }
+        &.slide-bg-2 {
+            background: @slide-bg-2;
+        }
+        &.slide-bg-3 {
+            background: @slide-bg-3;
+        }
+        &.slide-bg-4 {
+            background: @slide-bg-4;
+        }
+
+        * {
+            color: @c-white;
+        }
+
+        .testimonial-author {
+            margin-top:@testimonial-author-mt;
+        }
+
+        .testimonial-inner-wrapper {
+            height: 100%;
+            //overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: .5rem;
+                background-color: transparent;
+                position: relative;
+                height: 200px;
+              }
+
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }  
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(0,0,0,.2); 
+                border-radius: 555px;
+            }
+
+        }
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        top: 50%;
+
+        /*.md({
+            display: flex;
+            opacity: 1;
+        })*/
+    }
+
+   /* .md({
+        .swiper-button-next {
+            right: -15px;
+        }
+        .swiper-button-prev {
+            left: -15px;
+        }
+    });*/
+
+    .swiper-pagination {
+        bottom: 0;
+        .swiper-pagination-bullet {
+            background-color: @c-black;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+//out:false
+
+.newsletter-file {
+    margin-bottom: 4rem;
+    display: block;
+    color:@c-black;
+    img {
+        width: 100%;
+        object-fit: contain;
+        object-position: center center;
+        aspect-ratio: 4/6;
+        border:2px solid @c-light-gray;
+        margin-bottom: .5rem;
+        border-radius: @border-radius;
+        overflow: hidden;
+    }
+
+    &:hover {
+        color: @c-primary;
+        img {
+            border-color: @c-primary;
+        }
+    }
+}

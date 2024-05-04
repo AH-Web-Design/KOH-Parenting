@@ -1,0 +1,101 @@
+//out: false
+/*------------VARIABLES------------*/
+@footer-title-fs: 1rem;
+@footer-title-padding: @footer-title-fs;
+@footer-padding: 3rem 0;
+@footer-li-margin: calc(@footer-title-padding / 2.5);
+@footer-li-img-padding: @footer-title-fs;
+@footer-a-idle-color: #eaf7ff;
+
+.footer {
+    background-color: @c-black-bg;
+    padding: @footer-padding;
+    .footer-title {
+        color: @c-white;
+        font-size: @footer-title-fs;
+        text-transform: uppercase;
+        padding-bottom: @footer-title-padding;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+        li {
+             margin-bottom: @footer-li-margin;
+            display: flex;
+            align-items: center;
+
+            img {
+                padding-right: @footer-li-img-padding;
+                width: 2.1rem;
+                display: block;
+                object-fit: contain;
+            }
+        }
+    }
+
+    a,p {
+        color: @footer-a-idle-color;
+        text-decoration: none;
+        font-weight: 400;
+        &:hover {
+            color: @c-white;
+        }
+    }
+
+    .subscribe-btn {
+        max-width: 10.5rem !important;
+        font-size: 1rem !important;
+        width: auto !important;
+        color: @c-white !important;
+        background-color: @c-primary !important;
+        border-color: @c-primary !important;
+
+        &:hover {
+            background-color: @c-primary-hover !important;
+            border-color: @c-primary-hover !important;
+        }
+
+        &:active {
+            background-color: @c-primary-active !important;
+            border-color: @c-primary-active !important;
+        }
+    }
+
+    .subs-email {
+        display: flex;
+        align-items: center;
+
+        .form-control {
+            margin-right: 1rem;
+        }
+    }
+
+    .social-lst ul {
+        display: flex;
+        align-items: center;
+
+        li {
+            margin-right: 1rem;
+            font-size: 1.8rem;
+        }
+    }
+
+    .tnp-subscription {
+        max-width: none;
+        margin:0 0 1rem 0;
+    }
+
+    .terms-condition {
+        display: flex;
+        align-items: center;
+
+        li {
+            margin-left: 1rem;
+        }
+    }
+
+    .f-bttm {
+        margin-top: 3rem;
+    }
+}

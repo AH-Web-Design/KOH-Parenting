@@ -1,0 +1,81 @@
+//out: false
+
+
+.pdf-reader {
+    border-radius: 12px;
+    padding: 2rem 0;
+    background-color: #6D8290;
+    position: relative
+}
+
+.pdf-reader #the-canvas {
+    width: 70%;
+    border-radius: 12px;
+    box-shadow: 0 30px 50px 0 rgba(14, 106, 118, 0.58);
+    display: block;
+    margin: auto
+}
+
+.pdf-reader .buttons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.pdf-reader .buttons>span {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+    opacity: .2;
+    cursor: pointer
+}
+
+.pdf-reader .buttons>span#next:hover {
+    opacity: 1;
+    background: #fff;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.3) 100%)
+}
+
+.pdf-reader .buttons>span#prev:hover {
+    opacity: 1;
+    background: #fff;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.3) 100%)
+}
+
+.pdf-reader .pagination {
+    display: block;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+    color: #fff
+}
+
+.pdf-reader .links {
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+    border-radius: 12px;
+    width: 70%;
+    display: block;
+    margin: 2rem auto 0 auto;
+    padding: 1.5rem 2rem;
+    display: none
+}
+
+.pdf-reader .links #links-wrapper {
+    margin-top: 1rem
+}
+
+.pdf-reader .links #links-wrapper li:not(:last-child) {
+    padding-bottom: .5rem
+}

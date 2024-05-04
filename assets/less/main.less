@@ -1,0 +1,616 @@
+//out: false
+/*------------COLORS------------*/
+@c-primary: #2D96FD;
+@c-primary-hover: #5aaafb;
+@c-primary-active: #2686e7;
+@c-success: #10F4B6;
+@c-success-hover: #3fdd93;
+@c-success-active: #3bd38c;
+@c-green: #22CC7D;
+@c-yellow: #FFD752;
+@c-black: #415461;
+@c-black-bg: #1C2B36;
+@c-gray: #415461;
+@c-light-gray: #EBEBEB;
+@c-white: #fff;
+/*------------TYPOGRAPHY------------*/
+@fs-xl: 1rem;
+@fs-lg: .9rem;
+@fs-md: .8rem;
+@fs-sm: @fs-md;
+@poppins: 'Poppins', sans-serif;
+@p-fs: @fs-xl;
+@h1-fs: 2.625rem;
+@h1-fs-sm: 2rem;
+
+/*------------GAPS------------*/
+@gap-1: 1.5rem;
+@gap-2: 2rem;
+@gap-3: calc(@gap-1 * 2);
+
+/*------------SHADOWS------------*/
+@button-box-shadow: 0px 10px 19px 0px rgba(2, 162, 98, 0.54);
+@text-shadow: 0px 2px 10px rgba(65, 84, 97, 0.33);
+@box-shadow-dark: 0px 30px 50px 0px rgba(14, 106, 118, 0.58);
+@box-shadow-light: 0px 30px 50px 0px rgba(208, 195, 177, 0.5);
+
+/*------------FILTERS------------*/
+@blur: blur(25px) saturate(180%);
+
+
+/*------------BREAKPOINTS------------*/
+.xs(@rules) {
+    @media (max-width: 575.98px) {
+        @rules();
+    }
+}
+
+.sm(@rules) {
+    @media (max-width: 767.98px) {
+        @rules();
+    }
+}
+
+.md(@rules) {
+    @media (max-width: 991.98px) {
+        @rules();
+    }
+}
+
+.lg(@rules) {
+    @media (max-width: 1199.98px) {
+        @rules();
+    }
+}
+
+.xl(@rules) {
+    @media (max-width: 1399.98px) {
+        @rules();
+    }
+}
+
+/*------------HEIGHTS------------*/
+@box-height: 25rem;
+
+/*------------WIDTHS------------*/
+@section-p-max-width: 780px;
+
+/*------------PADDINGS------------*/
+@section-padding: 7.5rem;
+@section-padding-xs: 4rem;
+
+/*------------BORDERS------------*/
+@border-radius: 12px;
+
+/*------------SETUP------------*/
+html {
+.xl({
+    font-size: @fs-xl;
+});
+.lg({
+    font-size: @fs-lg;
+});
+.md({
+    font-size: @fs-md;
+});
+.sm({
+    font-size: @fs-sm;
+});
+
+}
+
+
+body {
+    font-family: @poppins;
+    color: @c-black;
+}
+
+p {
+    font-size: @p-fs;
+    margin-bottom: @gap-2;
+}
+
+p, .editor-text * {
+    color: @c-gray;
+}
+
+h1 {
+    font-size: @h1-fs;
+    margin-bottom: @gap-1;
+    color: @c-black;
+
+    .sm({
+        font-size: @h1-fs-sm;
+    })
+}
+
+/*------------BUTTONS------------*/
+.btn {
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-padding-y: .8rem;
+    min-width: 9.375rem;
+    --bs-btn-font-size: 1.1rem;
+
+    i {
+        margin-right: .5rem;
+    }
+}
+
+.btn-primary {
+    --bs-btn-bg: @c-primary;
+    --bs-btn-border-color: @c-primary;
+    --bs-btn-hover-bg: @c-primary-hover;
+    --bs-btn-hover-border-color: @c-primary-hover;
+    --bs-btn-active-bg: @c-primary-active;
+    --bs-btn-active-border-color: @c-primary-active;
+}
+
+.btn-success {
+    --bs-btn-bg: @c-success;
+    --bs-btn-border-color: @c-success;
+    --bs-btn-hover-bg: @c-success-hover;
+    --bs-btn-hover-border-color: @c-success-hover;
+    --bs-btn-active-bg: @c-success-active;
+    --bs-btn-active-border-color: @c-success-active;
+    --bs-btn-color: @c-black;
+    --bs-btn-hover-color: @c-black;
+    --bs-btn-active-color: @c-black;
+}
+
+.btn-shadow {
+    -webkit-box-shadow: @button-box-shadow;
+    -moz-box-shadow: @button-box-shadow;
+    box-shadow: @button-box-shadow;
+    text-shadow: @text-shadow;
+}
+
+/*------------BOX------------*/
+.box {
+    height: @box-height;
+    border-radius: @border-radius;
+    overflow: hidden;
+
+    .md({
+        margin-bottom:calc(@gap-1 + .5rem);
+    });
+
+    &.shadow-dark {
+        -webkit-box-shadow: @box-shadow-dark;
+        -moz-box-shadow: @box-shadow-dark;
+        box-shadow: @box-shadow-dark;
+    }
+
+    &.shadow-light {
+        -webkit-box-shadow: @box-shadow-light;
+        -moz-box-shadow: @box-shadow-light;
+        box-shadow: @box-shadow-light;
+    }
+
+    .box-bg {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+}
+
+/*------------SECTION------------*/
+
+.section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: @section-padding 0;
+
+    &.gray {
+        background-color: @c-light-gray;
+    }
+
+    &.inside {
+        border-radius: @border-radius;
+    }
+
+    .xs({
+        padding: @section-padding-xs 0;
+    });
+
+    .content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-bg-color {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: @c-black-bg;
+        opacity: .8;
+    }
+
+    h1{
+        max-width: 980px;
+    } 
+
+    &.text-center h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        max-width: @section-p-max-width;
+    }
+}
+
+/*------------FORM------------*/
+.form-label, .form-text, .form-check-label {
+    color:@c-gray;
+}
+
+.form-label, .form-check-label {
+    font-size:0.875rem;
+}
+
+.form-text {
+    font-size: 0.75rem;
+}
+
+/*------------MODAL------------*/
+.modal-content {
+    border-radius: @border-radius;
+    overflow: hidden;
+}
+
+/*------------JARALLAX------------*/
+.jarallax {
+    position: relative;
+    z-index: 0;
+  }
+  .jarallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+/*------------NEWSLETTER FORM------------*/
+  .newsletter-form-section {
+    background-color: @c-light-gray;
+    background-image: url('../img/floating-form-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    .xs({
+        padding: 2rem 1rem !important;
+        #newsletterFormSubmit {
+            width: 100% !important;
+            margin-top: 1rem;
+        }
+        .container {
+            --bs-gutter-x: 2rem;
+        }
+    });
+
+    small {
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    h1, p {
+        text-align:center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    input.form-control {
+        border: none !important;
+        text-align: center;
+        &:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255,255,255,0.25);
+        }
+        min-height: 50px;
+    }
+
+    #newsletter-form {
+        .form-check, .btn {
+            margin: auto;
+            display: table;
+        }
+    }
+}
+
+#beforeEmailRegister {
+    &, p, label, #newsletterFormEmailHelp, #newsletterFormNameHelp, h1 {
+        color: @c-white;
+
+        #newsletterFormSubmit {
+            --bs-btn-bg: #1056ffa1;
+    --bs-btn-active-bg: #1056ffa1;
+    --bs-btn-border-color: transparent;
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-hover-bg: #1056ffc4;
+    --bs-btn-hover-border-color: transparent;
+        }
+    }}
+
+.loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,.7);
+    -webkit-backdrop-filter: blur(25px) saturate(120%);
+    backdrop-filter: blur(25px) saturate(120%);
+
+    
+
+    img {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+}
+
+
+
+#afterEmailRegister {
+    text-align: center;
+    color: @c-white;
+    & * {
+        color: @c-white;
+    }
+    #afterEmailRegisterIcon {
+        color: @c-white;
+        font-size: 4rem;
+        margin-bottom: @gap-1;
+
+        &.red {
+            color: #fff !important;
+        }
+    }
+}
+
+.subscription-form-lg {
+
+    .md({
+        padding-bottom: @gap-1;
+    });
+
+    .newsletter-form-section {
+        margin-bottom: 0;
+
+        .col-lg-6.offset-lg-3 {
+            width: 75%;
+            margin:auto;
+            
+        }
+    }
+
+    &, & > .newsletter-form-section  {
+        height: 100%;
+    }
+}
+
+
+.floating-subscription-form {
+
+    
+    display:none;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    padding-bottom: 1rem;
+    
+    .loading {
+        background-color: rgba(255,255,255,.7);
+        -webkit-backdrop-filter: blur(25px) saturate(120%);
+        backdrop-filter: blur(25px) saturate(120%);
+        border-radius: @border-radius;
+    }
+
+    .newsletter-form-section {
+        margin-bottom: 0;
+        max-width: 35%;
+        padding: 2rem;
+        margin: auto;
+        background-image: url('../img/floating-form-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        -webkit-box-shadow: @box-shadow-dark;
+        box-shadow: @box-shadow-dark;
+
+        .lg({
+            max-width: 50% !important; 
+        });
+
+        .md({
+            max-width: 90% !important;
+        })
+    }
+
+    #beforeEmailRegister {
+
+        
+
+       .col-lg-6 {
+        width: 100% !important;
+        height: 100%;
+        padding: 0;
+        & > .mb-3 {
+            margin-bottom: 1rem !important;
+            height: 100%;
+        }
+       }
+
+       .offset-lg-3 {
+        margin-left: 0 !important;
+       }
+
+        & > * {
+            display: block !important;
+        }
+
+        p, h1, label, #newsletterFormEmailHelp {
+            display: none !important;
+        }
+
+        & > .row, #newsletterFormEmail {
+            border:none !important;
+            &:focus {
+                box-shadow: 0 0 0 0.25rem rgb(255 255 255 / 25%);
+            }
+
+            text-align: center;
+        }
+
+        #newsletterFormSubmit {
+            --bs-btn-bg: #1056ffa1;
+            --bs-btn-active-bg:#1056ffa1;
+            --bs-btn-border-color:transparent;
+            --bs-btn-active-border-color:transparent;
+            --bs-btn-hover-bg:#1056ffc4;
+            --bs-btn-hover-border-color:transparent;
+            
+        }
+    }
+
+
+    #afterEmailRegister {
+        *,#afterEmailRegisterIcon {
+            color: @c-white !important;
+        }
+
+        
+    }
+
+    &.popup {
+
+        padding-top: 8rem;
+
+        .newsletter-form-section {
+            max-width: 50% !important;
+
+            .xl({
+                max-width: 70% !important;
+            });
+
+            h1,p {
+                width: 100%;
+                display: block !important;
+            }
+        }
+
+        #close-popup {
+            display: block;
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: @c-white;
+            opacity: .4;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+        
+        height: 100%;
+        top: 0;
+        background-color:rgba(0,0,0,.6);
+        align-items: center;
+
+        .newsletter-form-section {
+            padding: 4rem;
+
+            .md({
+                max-width: 90% !important;
+                padding: 2rem !important;
+            })
+        }
+
+        #beforeEmailRegister {
+
+            .col-lg-6 {
+                width: 80% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                display: block;
+
+                .lg({
+                    width: 100% !important;
+                })
+            }
+
+            &, p, label, #newsletterFormEmailHelp, h1 {
+                display: block !important;
+                color: @c-white;
+            }
+
+            #newsletterFormEmail {
+                height: 50px;
+            }
+
+
+           .row {
+                height: auto;
+           }
+
+           #newsletterFormSubmit {
+            margin-top: 2rem;
+            max-width: 50%;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            --bs-btn-bg: #1056ffa1 !important;
+            --bs-btn-active-bg:#1056ffa1 !important;
+            --bs-btn-border-color:transparent !important;
+            --bs-btn-active-border-color:transparent !important;
+            --bs-btn-hover-bg:#1056ffc4 !important;
+            --bs-btn-hover-border-color:transparent !important;
+
+            .xl({
+                max-width: 75% !important;
+            });
+
+            .md({
+                max-width: 100% !important;
+            })
+           }
+        }         
+    }
+}
+
+
+.colored-button {
+    background-image: url('../img/floating-form-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    --bs-btn-hover-border-color:transparent;
+    --bs-btn-active-border-color:transparent;
+    --bs-btn-border-color:transparent;
+    --bs-btn-border-width:0;
+}
+
+/*------------LAYOUT------------*/
+@import './layout/grid.less';
+@import './layout/navbar.less';
+@import './layout/head.less';
+@import './layout/footer.less';

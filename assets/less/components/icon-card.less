@@ -1,0 +1,78 @@
+//out: false
+/*------------VARIABLES------------*/
+@icon-card-background: linear-gradient(45deg, rgba(45,150,253,1) 0%, rgba(51,184,255,1) 100%);
+@icon-card-title-fs: 1.25rem;
+@icon-card-title-fw: 600;
+@icon-card-text-fw:400;
+@icon-card-content-bg:linear-gradient(124deg, rgba(45,150,253,1) 0%, rgba(51,184,255,0) 100%);
+@icon-card-icon-size: 4rem;
+@icon-card-height: 17.8rem;
+@icon-card-icon-opacity:.7;
+@icon-card-box-shadow: @box-shadow-light;
+@icon-card-box-shadow-hover: @box-shadow-dark;
+@icon-card-padding: @gap-2;
+@icon-card-transition-duration: .3s;
+@icon-card-transition: ease @icon-card-transition-duration transform, ease @icon-card-transition-duration box-shadow;
+
+
+/*------------SETUP------------*/
+.icon-card {
+    background: @icon-card-background;
+    border-radius: @border-radius;
+    -webkit-box-shadow:@icon-card-box-shadow;
+    -moz-box-shadow: @icon-card-box-shadow;
+    box-shadow: @icon-card-box-shadow;
+    height: @icon-card-height;
+    padding: @icon-card-padding;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: @gap-3;
+    -webkit-transition: @icon-card-transition;
+    -moz-transition: @icon-card-transition;
+    transition: @icon-card-transition;
+
+    &:hover {
+        -webkit-box-shadow:@icon-card-box-shadow-hover;
+        -moz-box-shadow:@icon-card-box-shadow-hover;
+        box-shadow:@icon-card-box-shadow-hover;
+    }
+
+    h4 {
+        font-size: @icon-card-title-fs;
+        font-weight: @icon-card-title-fw;
+        margin-bottom: @gap-1;
+    }
+
+    p {
+        font-weight: @icon-card-text-fw;
+    }
+
+    h4, p{
+        color: @c-white;
+    } 
+
+    .icon-card-content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: @icon-card-content-bg;
+        z-index: 2;
+        padding: @icon-card-padding;
+        border-radius: @border-radius;
+        
+    }
+
+    img {
+        position: absolute;
+        width: @icon-card-icon-size;
+        height: @icon-card-icon-size;
+        right: @icon-card-padding;
+        bottom: @icon-card-padding;
+        mix-blend-mode: overlay;
+        opacity: @icon-card-icon-opacity;
+        z-index: 1;
+    }
+}
+
