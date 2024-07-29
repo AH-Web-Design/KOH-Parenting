@@ -26,6 +26,9 @@ get_parents();
 
 <head>
   <?php /*DEV SITE TAGS START*/ ?>
+    <!-- Start cookieyes banner -->
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/5daf5864c94315b6c01afd7e/script.js"></script>
+    <!-- End cookieyes banner -->
   <?php if($dev || $noIndex) {
     echo '<meta name="googlebot" content="noindex, nofollow">';
   } else {
