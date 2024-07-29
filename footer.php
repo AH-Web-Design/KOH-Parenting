@@ -64,6 +64,97 @@
   </div>
 </footer>
 
+<style>
+    .page-id-3100 .main-wrap,
+    .page-id-3195 .main-wrap
+    {margin:125px auto;}
+
+    .page-id-3096 h2,
+    .page-id-3100 h2,
+    .page-id-3195 h2 {text-align: center;color:#fff;background-color: #EBEBEB;background-image: url('https://kohparenting.com/wp-content/themes/kohparenting/assets/img/floating-form-bg.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;padding: 50px 20px;}
+
+    .page-id-3100 .custom-bx,
+    .page-id-3195 .custom-bx {display: flex;justify-content: center;}
+    .page-id-3100 .abt-txt {display: flex;flex-flow: column;}
+    .page-id-3195 .abt-txt {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        width: 100%;
+        margin: 25px 25px 150px;
+    }
+    .pms-account-navigation ul {
+        justify-content: center;
+    }
+    .pms-account-navigation ~ p {
+        text-align: center;
+    }
+    .page-id-3195 #pms_login {
+        max-width: 450px;
+        margin: auto;
+    }
+    .pms-account-navigation {
+        margin: .5em auto 1em auto;
+        width: 50%;
+    }
+    .pms-form input[type="submit"],
+    #pms_login input[type="submit"] {
+        margin-bottom: 20px;
+        margin-right: 20px;
+        background-image: url('https://kohparenting.com/wp-content/themes/kohparenting/assets/img/floating-form-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        color: #fff;
+        border-radius: 0.375rem;
+        padding: .5rem;
+        max-width: 15.25rem;
+        min-width: 15.25rem;
+        border: none;
+        outline: none;
+    }
+    .pms-account-subscription-details-table td {
+        padding-right: 50px;
+    }
+    .pms-account-subscription-details-table {
+        margin: 12px auto;
+    }
+    .pms-form input[type=text],
+    .pms-form input[type=password],
+    #pms_login input[type="text"],
+    #pms_login input[type="password"]  {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--bs-body-color);
+        background-color: var(--bs-form-control-bg);
+        background-clip: padding-box;
+        border: var(--bs-border-width) solid var(--bs-border-color);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: .375rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    @media screen and (min-width: 768px) {
+        .pms-form {
+            margin: auto auto 1em auto ;
+            max-width: 50%;
+            width: 50%;
+            justify-content: center;
+            display: flex;
+            flex-flow: column;
+        }
+        .page-id-1250 .col-md-3 {
+            display: grid;
+            margin-bottom: 1.5rem;
+        }
+    }
+</style>
 
 <script src="<?php bloginfo('template_url') ?>/vendor/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="<?php bloginfo('template_url') ?>/vendor/bootstrap@5.3.0-alpha1/popper.min.js"></script>

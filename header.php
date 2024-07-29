@@ -111,7 +111,6 @@ get_parents();
     #wpadminbar {
       display: none !important;
     }
-
     html {
       margin-top: 0 !important;
     }
@@ -149,34 +148,31 @@ if(!$dev) {
 ?>
   
 <?php
-  if(!$noMenu) {
-    ?>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light">
-    <div class="container">
-      <a title="<?php echo get_bloginfo('name') ?>" class="navbar-brand" href="/"><img height="70"
-                  src="<?php bloginfo('template_url') ?>/assets/img/logo.png" alt="<?php echo get_bloginfo('name') ?>"></a>
-
-                
+  if(!$noMenu) { ?>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+          <div class="container">
+              <a title="<?php echo get_bloginfo('name') ?>" class="navbar-brand" href="/"><img height="70"
+                                                                                               src="<?php bloginfo('template_url') ?>/assets/img/logo.png" alt="<?php echo get_bloginfo('name') ?>"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                      aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <?php
-                  $menuItems = wp_get_nav_menu_items('koh-menu');
-                  foreach ($menuItems as $menuItem) {
-                    if ($menuItem->post_status = 'publish') {
-                      echo '<li class="nav-item"><a title="' . $menuItem->title . '" class="nav-link" href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
-                    }
-                  }
-                  ?>
-                  <li class="nav-item ms-lg-4"><a title="View Our Learning Guides" class="btn btn-primary colored-button"
-                      href="/learning-guides/">View Our Learning Guides</a></li>
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <?php
+                      $menuItems = wp_get_nav_menu_items('koh-menu');
+                      foreach ($menuItems as $menuItem) {
+                          if ($menuItem->post_status = 'publish') {
+                              echo '<li class="nav-item"><a title="' . $menuItem->title . '" class="nav-link" href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
+                          }
+                      }
+                      ?>
+                      <li class="nav-item ms-lg-4"><a title="View Our Learning Guides" class="btn btn-primary colored-button"
+                                                      href="/learning-guides/">Healthy Co-Parenting Toolkit</a></li>
 
                       <?php
                       /*if($GLOBALS['cookie'] || $GLOBALS['emailCookie']) {
-                        
+
                         ?>
                       <li class="nav-item ms-lg-4 desktop-user-tooltip-icon">
                         <a class="nav-link" href="javascript:void();" data-bs-toggle="tooltip" data-bs-placement="bottom" title="<?php echo $iconTitle ?>" style="color: <?php echo $iconColor ?> !important;">
@@ -186,12 +182,10 @@ if(!$dev) {
                         <?php
                       }*/
                       ?>
-
-                     
-                </ul>
+                  </ul>
               </div>
-            </div>
-          </nav>
+          </div>
+      </nav>
     <?php
   }
 ?>
