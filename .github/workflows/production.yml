@@ -20,7 +20,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
+          protocol: sftp
           port: ${{ secrets.FTP_PORT }}
           local-dir: "./"  # Adjust if needed
           server-dir: "/public_html/"  # Change based on where your site is hosted
