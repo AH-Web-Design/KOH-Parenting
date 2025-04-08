@@ -310,7 +310,7 @@ $call_to_action = get_field('call_to_action');
             <iframe id="iframe" class="youtube-video-iframe" width="100%" height="100%" data-src="<?php echo $banner['banner_video']['banner_youtube_video_address'] ?>" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="closeModal">Close</button>
+          <button type="button" class="btn btn-secondary" id="closeModal">Closes</button>
         </div>
       </div>
     </div>
