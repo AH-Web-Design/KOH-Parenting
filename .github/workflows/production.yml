@@ -3,7 +3,7 @@ name: Deploy to SiteGround
 on:
   push:
     branches:
-      - main  # Change this if deploying from a different branch
+      - main
 
 jobs:
   deploy:
@@ -23,9 +23,11 @@ jobs:
           protocol: ftp
           port: ${{ secrets.FTP_PORT }}
           local-dir: "./"  # Adjust if needed
-          server-dir: "/public_html/"  # Change based on where your site is hosted
+          server-dir: "/kohparenting.com/public_html/wp-content/themes/kohparenting/test/"
           exclude: |
             **/.git*
             **/.github*
             **/node_modules/**
             **/README.md
+            **/libraries/**
+            **/vendor/**
