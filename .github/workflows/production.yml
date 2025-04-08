@@ -23,7 +23,7 @@ jobs:
           protocol: ftp
           port: ${{ secrets.FTP_PORT }}
           local-dir: "./"  # Adjust if needed
-          server-dir: "/kohparenting.com/public_html/wp-content/themes/kohparenting/test/"
+          server-dir: "/kohparenting.com/public_html/wp-content/themes/kohparenting/"
           exclude: |
             **/.git*
             **/.github*
